@@ -91,7 +91,7 @@ export default function About() {
             <p className="font-heading">Satisfied with the service I offered?</p>
             <Link
               href="/coffee"
-              className="w-fit inline-block mt-4 bg-gold/80 text-navy font-body text-sm font-medium px-6 py-3 rounded-xs hover:bg-gold/90 transition-colors"
+              className="w-fit inline-block mt-4 bg-gold text-navy font-body text-sm font-medium px-6 py-3 rounded-xs hover:bg-gold/90 transition-colors"
             >
               Buy me a coffee
             </Link>

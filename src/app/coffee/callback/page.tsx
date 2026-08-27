@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { FcApproval } from "react-icons/fc";
 import { IoHourglassOutline } from "react-icons/io5";
@@ -7,7 +7,7 @@ import { VscErrorCompact } from "react-icons/vsc";
 
 type PaymentStatus = "verifying" | "success" | "failed";
 
-export default function CoffeeCallbackPage() {
+function CoffeeCallback() {
   const searchParams = useSearchParams();
   const reference = searchParams.get("reference");
 
@@ -91,5 +91,13 @@ export default function CoffeeCallbackPage() {
         )}
       </section>
     </main>
+  );
+}
+
+export default function CoffeeCallbackPage() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <CoffeeCallback />
+    </Suspense>
   );
 }
