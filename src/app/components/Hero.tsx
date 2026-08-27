@@ -3,6 +3,7 @@
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 
+
 const container = {
   hidden: {},
   show: {
@@ -29,12 +30,13 @@ export default function Hero() {
       animate="show"
       className="px-6 pt-24 pb-12 md:px-12 md:pb-16 max-w-3xl"
     >
+     
       <motion.h1
         variants={item}
         className="font-heading text-3xl md:text-5xl leading-tight text-cream"
       >
-        Design-led engineering{" "}
-        <span className="text-gold italic">for brands</span> that want to stand
+        Design-led engineering 
+        <span className="text-gold italic"> for brands</span> that want to stand
         apart.
       </motion.h1>
 
@@ -66,6 +68,8 @@ export default function Hero() {
           </div>
         ))}
       </motion.div>
+
+      
     </motion.section>
   );
 }

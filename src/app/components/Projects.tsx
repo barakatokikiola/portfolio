@@ -1,12 +1,12 @@
 "use client";
 
 import type { StaticImageData } from "next/image";
-import creative from "@/src/assets/creative.png";
-import movie from "@/src/assets/movie.png";
-import revent from "@/src/assets/revent.png";
-import todo from "@/src/assets/laptop.png";
-import film from "@/src/assets/filmpage.png";
-import jobdoor from "@/src/assets/jobdoor.png";
+import creative from "@/assets/creative.png";
+import movie from "@/assets/movie.png";
+import revent from "@/assets/revent.png";
+import todo from "@/assets/laptop.png";
+import film from "@/assets/filmpage.png";
+import jobdoor from "@/assets/jobdoor.png";
 import Image from "next/image";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import Link from "next/link";
@@ -31,7 +31,7 @@ function ProjectTile({
   className: string;
 }) {
   return (
-    <div className={`flex flex-col  ${className}`}>
+    <div className={`flex flex-col border p-4 rounded-md border-gold/20 ${className}`}>
       <div className={`relative h-64 overflow-hidden bg-navy-light`}>
         <Image
           src={project.img}
@@ -47,16 +47,16 @@ function ProjectTile({
       </div>
 
       <div className="pt-3 flex-1">
-        <div className="flex items-center justify-between">
-          <span className="font-ibm text-sm text-gold mt-3">{project.id}</span>
+        <div className="flex items-center justify-between py-3">
+          <span className="font-ibm text-base text-gold">{project.id}</span>
           <Link
             href={project.live}
             target="_blank"
             rel="noreferrer"
             aria-label="Visit webpage"
-            className="font-body p-1.5 text-xs text-cream hover:text-gold"
+            className="font-body px-1.5 text-cream hover:text-gold"
           >
-            <BsArrowUpRight />
+            <BsArrowUpRight className="w-4 h-4"/>
           </Link>
         </div>
         <h1 className="font-heading text-cream text-base mt-1">
@@ -134,7 +134,7 @@ const smallB: Project = {
   tags: ["Next.js", "TypeScript"],
   description:
     "A task management app built with Next.js and React, type-safe with TypeScript, styled with Tailwind CSS.",
-  category: "Website Design",
+  category: "Web App",
 };
 
 const smallC: Project = {
@@ -146,7 +146,7 @@ const smallC: Project = {
   tags: ["React", "Bootstrap"],
   description:
     "A React app for searching and exploring movies with a clean, Bootstrap-powered interface.",
-  category: "Website Design",
+  category: "Web App",
 };
 
 export default function Projects() {

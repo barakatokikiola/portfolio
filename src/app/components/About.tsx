@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import image from "@/src/assets/barakat.jpg";
+import image from "@/assets/barakat.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 type Principle = {
   title: string;
@@ -84,6 +85,16 @@ export default function About() {
                 Frontend Engineer & Web Designer
               </div>
             </div>
+          </div>
+
+          <div className="flex flex-col pt-12">
+            <p className="font-heading">Satisfied with the service I offered?</p>
+            <Link
+              href="/coffee"
+              className="w-fit inline-block mt-4 bg-gold/80 text-navy font-body text-sm font-medium px-6 py-3 rounded-xs hover:bg-gold/90 transition-colors"
+            >
+              Buy me a coffee
+            </Link>
           </div>
         </motion.div>
 

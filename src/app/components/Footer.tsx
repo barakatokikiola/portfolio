@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -42,14 +43,14 @@ export default function Footer() {
         <ul className="flex items-center gap-6">
           {socialLinks.map((link) => (
             <li key={link.label}>
-              <a
+              <Link
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
                 className="font-body text-sm text-muted hover:text-gold transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
