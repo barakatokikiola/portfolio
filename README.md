@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Barakat — Frontend Developer Portfolio
 
-## Getting Started
+A personal portfolio website showcasing my work, technical skills, services, and experience as a **Frontend Developer and AI enthusiast**.
 
-First, run the development server:
+The website is designed with a focus on clean interfaces, responsive layouts, accessibility, performance, and thoughtful user experience.
+
+## ✨ Features
+
+* Responsive design across desktop, tablet, and mobile
+* Modern and minimal UI
+* Project showcase with links to live projects
+* Services section
+* About section
+* Contact section
+* Mobile navigation menu
+* SEO-friendly metadata
+* Optimized images and assets
+* Accessible and keyboard-friendly interactions
+
+## 🛠️ Tech Stack
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+* **React Icons**
+* **Git & GitHub**
+
+## 📁 Project Structure
+
+```text
+barakat-portfolio/
+├── public/
+│   ├── og-image.png
+│   └── ...
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── assets/
+│   └── ...
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/barakat-portfolio.git
+```
+
+Navigate into the project:
+
+```bash
+cd barakat-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Available Scripts
 
-## Learn More
+| Command         | Description                   |
+| --------------- | ----------------------------- |
+| `npm run dev`   | Starts the development server |
+| `npm run build` | Creates a production build    |
+| `npm run start` | Starts the production server  |
+| `npm run lint`  | Runs ESLint                   |
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The portfolio uses a dark, elegant visual direction with a navy background, cream typography, and gold accents.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The design emphasizes:
 
-## Deploy on Vercel
+* Clear visual hierarchy
+* Strong typography
+* Generous spacing
+* Subtle interactions
+* Responsive layouts
+* Simple navigation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Responsive Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The website is optimized for:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile devices
+
+The navigation automatically switches to a mobile menu on smaller screens.
+
+## 🌐 Deployment
+
+The portfolio can be deployed using platforms such as **Vercel** or **Netlify**.
+
+For production:
+
+```bash
+npm run build
+```
+
+## 👩🏽‍💻 About Me
+
+I'm **Barakat Tajudeen**, a Frontend Developer passionate about building responsive, accessible, and user-focused web applications.
+
+I work primarily with React, Next.js, TypeScript, and Tailwind CSS, while also exploring the intersection of **frontend development and artificial intelligence**.
+
+I'm particularly interested in building products that solve real problems and creating interfaces that are both functional and enjoyable to use.
+
+## 📬 Contact
+
+If you'd like to collaborate, discuss a project, or explore an opportunity, feel free to connect with me through the contact information available on my portfolio.
+
+## 📄 License
+
+This project is a personal portfolio website. The source code is available for learning and reference, but the personal content, branding, images, and project assets belong to their respective owners.
