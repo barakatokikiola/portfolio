@@ -1,10 +1,8 @@
 "use client";
 
 import type { StaticImageData } from "next/image";
-import creative from "@/assets/creative.png";
-import movie from "@/assets/movie.png";
+
 import revent from "@/assets/revent.png";
-import todo from "@/assets/laptop.png";
 import film from "@/assets/filmpage.png";
 import jobdoor from "@/assets/jobdoor.png";
 import Image from "next/image";
@@ -31,7 +29,9 @@ function ProjectTile({
   className: string;
 }) {
   return (
-    <div className={`flex flex-col border p-4 rounded-md border-gold/20 ${className}`}>
+    <div
+      className={`flex flex-col border p-4 rounded-md border-gold/20 ${className}`}
+    >
       <div className={`relative h-64 overflow-hidden bg-navy-light`}>
         <Image
           src={project.img}
@@ -56,7 +56,7 @@ function ProjectTile({
             aria-label="Visit webpage"
             className="font-body px-1.5 text-cream hover:text-gold"
           >
-            <BsArrowUpRight className="w-4 h-4"/>
+            <BsArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
         <h1 className="font-heading text-cream text-base mt-1">
@@ -113,41 +113,6 @@ const smallA: Project = {
     "A responsive website built with Angular, TypeScript, and Tailwind CSS, focused on clean, accessible design.",
   category: "Website Design",
 };
-const secondaryB: Project = {
-  id: "04",
-  img: creative,
-  title: "Creative Nextjs Portfolio",
-  live: "https://nextjs-portfolio-pink-pi.vercel.app/",
-  github: "https://github.com/barakatokikiola/Nextjs-Portfolio",
-  tags: ["Next.js", "Three.js", "TypeScript"],
-  description:
-    "A responsive portfolio built with React, Tailwind CSS, and Three.js, using Next.js for server-side rendering and performance.",
-  category: "Website Design",
-};
-
-const smallB: Project = {
-  id: "05",
-  img: todo,
-  title: "Nextjs Todo App",
-  live: "https://nextjs-todo-e32142e33-barakatokikiolas-projects.vercel.app/",
-  github: "https://github.com/barakatokikiola/Nextjs-Todo-App",
-  tags: ["Next.js", "TypeScript"],
-  description:
-    "A task management app built with Next.js and React, type-safe with TypeScript, styled with Tailwind CSS.",
-  category: "Web App",
-};
-
-const smallC: Project = {
-  id: "06",
-  img: movie,
-  title: "Movie Search App",
-  live: "https://barakatokikiola.github.io/Movie-App/",
-  github: "https://github.com/barakatokikiola/Movie-App",
-  tags: ["React", "Bootstrap"],
-  description:
-    "A React app for searching and exploring movies with a clean, Bootstrap-powered interface.",
-  category: "Web App",
-};
 
 export default function Projects() {
   return (
@@ -164,14 +129,9 @@ export default function Projects() {
 
       <div className="flex flex-col gap-16 mb-8 shadow-2xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          
           <ProjectTile project={smallA} className="" />
           <ProjectTile project={secondaryA} className="" />
           <ProjectTile project={featured} className="" />
-
-          <ProjectTile project={secondaryB} className="" />
-          <ProjectTile project={smallB} className="" />
-          <ProjectTile project={smallC} className="" />
         </div>
       </div>
     </section>
