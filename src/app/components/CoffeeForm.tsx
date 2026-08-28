@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { CiCoffeeCup } from "react-icons/ci";
+import { GrFormNextLink } from "react-icons/gr";
 
 const presetAmounts = [1000, 2500, 5000];
 
@@ -56,7 +56,7 @@ export default function CoffeeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-cream/90 text-navy space-y-6 text-left shadow-gold shadow-xs px-8 py-6 rounded-lg"
+      className="bg-navy-light/50 text-cream space-y-6 text-left border border-gray-800 px-8 py-6 rounded-lg"
     >
       <div>
         <p className="mb-3 text-sm font-medium">
@@ -78,7 +78,7 @@ export default function CoffeeForm() {
             <ToggleGroupItem
               key={preset}
               value={String(preset)}
-              className="h-12 rounded-lg border"
+              className="h-12 rounded-lg bg-navy border border-gray-700"
             >
               ₦{preset.toLocaleString()}
             </ToggleGroupItem>
@@ -101,7 +101,7 @@ export default function CoffeeForm() {
           placeholder="Enter amount"
           value={customAmount}
           onChange={(e) => setCustomAmount(e.target.value)}
-          className="w-full rounded-lg border border-gold bg-transparent px-4 py-3"
+          className="w-full rounded-lg border border-gray-700 bg-navy px-4 py-3"
         />
       </div>
 
@@ -117,7 +117,7 @@ export default function CoffeeForm() {
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-gold bg-transparent px-4 py-3"
+          className="w-full rounded-lg border border-gray-700 bg-navy  px-4 py-3"
         />
       </div>
 
@@ -133,20 +133,21 @@ export default function CoffeeForm() {
           placeholder="Drop a message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full rounded-lg border border-gold bg-transparent px-4 py-3 outline-none"
+          className="w-full rounded-lg border border-gray-700 bg-navy  px-4 py-3 outline-none"
         />
       </div>
       {error && <p className="text-sm text-destructive">{error}</p>}
       <button
         disabled={isSubmitting}
         type="submit"
-        className="text-navy border border-gold rounded-lg w-full cursor-pointer hover:bg-gold/60 hover:text-cream px-6 py-3 font-medium transition"
+        className="text-navy bg-gold rounded-lg w-full cursor-pointer hover:bg-gold/60 hover:text-cream px-6 py-3 font-medium transition"
       >
         {isSubmitting ? (
           <p>Initializing payment...</p>
         ) : (
           <p className="flex items-center justify-center gap-2 w-full ">
-            <CiCoffeeCup /> Continue
+            Continue
+            <GrFormNextLink />
           </p>
         )}
       </button>
