@@ -13,7 +13,7 @@ export default function Coffee() {
 
         <p className="mt-4 max-w-lg text-muted-foreground">
           If you’ve found my work useful or enjoyed one of my projects, you can
-          support me with a coffee. Every little bit helps!
+          buy me a coffee.
         </p>
 
         <div className="mt-10 w-full max-w-md">

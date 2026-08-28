@@ -56,7 +56,7 @@ export default function CoffeeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 text-left shadow-gold shadow-xs px-8 py-6 rounded-lg"
+      className="bg-cream/90 text-navy space-y-6 text-left shadow-gold shadow-xs px-8 py-6 rounded-lg"
     >
       <div>
         <p className="mb-3 text-sm font-medium">
@@ -140,7 +140,7 @@ export default function CoffeeForm() {
       <button
         disabled={isSubmitting}
         type="submit"
-        className="border border-gold rounded-lg w-full cursor-pointer hover:bg-gold/60 hover:text-navy px-6 py-3 font-medium text-background transition hover:opacity-90"
+        className="text-navy border border-gold rounded-lg w-full cursor-pointer hover:bg-gold/60 hover:text-cream px-6 py-3 font-medium transition"
       >
         {isSubmitting ? (
           <p>Initializing payment...</p>

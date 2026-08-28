@@ -1,13 +1,14 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { FcApproval } from "react-icons/fc";
-import { IoHourglassOutline } from "react-icons/io5";
-import { VscErrorCompact } from "react-icons/vsc";
+import { useRouter, useSearchParams } from "next/navigation";
+import { CiCircleCheck } from "react-icons/ci";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { SlClose } from "react-icons/sl";
 
 type PaymentStatus = "verifying" | "success" | "failed";
 
 function CoffeeCallback() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const reference = searchParams.get("reference");
 
@@ -51,6 +52,8 @@ function CoffeeCallback() {
 
         setStatus("success");
         setMessage("Your payment was successfully verified.");
+        router.push("/");
+        router.refresh();
       } catch {
         if (cancelled) return;
 
@@ -67,13 +70,19 @@ function CoffeeCallback() {
   }, [reference]);
 
   return (
-    <main className="min-h-screen">
-      <section className="mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-6 text-center">
+    <main className="min-h-screen flex">
+      <section className="bg-white/90 flex flex-col items-center justify-center text-navy p-12 rounded-md  h-80 max-w-xl m-auto">
         <span className="mb-6 text-5xl">
-          {status === "verifying" ? <IoHourglassOutline className="animate-spin" /> : status === "success" ? <FcApproval className="animate-pulse"/> : <VscErrorCompact className="text-red-400"/>}
+          {status === "verifying" ? (
+            <AiOutlineLoading3Quarters className="animate-spin" />
+          ) : status === "success" ? (
+            <CiCircleCheck className="text-green-500" />
+          ) : (
+            <SlClose className="text-red-500" />
+          )}
         </span>
 
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-3xl font-medium">
           {status === "verifying"
             ? "Confirming your payment..."
             : status === "success"
@@ -82,13 +91,6 @@ function CoffeeCallback() {
         </h1>
 
         <p className="mt-4 text-muted-foreground">{message}</p>
-
-        {reference && (
-          <p className="mt-6 text-sm text-muted-foreground">
-            Reference:
-            <span className="ml-2 font-mono">{reference}</span>
-          </p>
-        )}
       </section>
     </main>
   );
