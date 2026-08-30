@@ -1,34 +1,21 @@
 import type { Metadata } from "next";
-import {
-  IBM_Plex_Sans,
-  PT_Serif,
-  Playfair_Display, Noto_Sans } from "next/font/google";
+import { IBM_Plex_Sans, Playfair_Display, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import WhatsAppFloat from "./components/WhatsappFloat";
 import { cn } from "@/lib/utils";
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
+const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const ibm = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-ibm",
 });
-
-const pt_serif = PT_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-pt_serif",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600"],
-});
-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://barakatokikiola.netlify.app/"), // swap for your real domain
@@ -40,7 +27,7 @@ export const metadata: Metadata = {
     description: "Design-led engineering for brands that want to stand apart.",
     url: "https://barakatokikiola.netlify.app/",
     siteName: "Barakat Okikiola",
-    images: ["/og-image.webp"],
+    images: ["/og-image.png"],
     type: "website",
   },
   twitter: {
@@ -69,12 +56,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(playfair.variable, ibm.variable, pt_serif.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)}>
+    <html
+      lang="en"
+      className={cn(
+        ibm.variable,
+        "font-sans",
+        notoSans.variable,
+        playfair.variable,
+      )}
+    >
       <body>
-         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
-        <main>{children}
-          <WhatsAppFloat/>
+        <main>
+          {children}
+          <WhatsAppFloat />
         </main>
       </body>
     </html>

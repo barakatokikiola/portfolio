@@ -1,11 +1,10 @@
 "use client";
 
+import { TextAlignEnd, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { IoCloseOutline } from "react-icons/io5";
-import { RiMenu3Fill } from "react-icons/ri";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -70,7 +69,7 @@ export default function Navbar() {
             className="text-cream md:hidden"
             aria-label="Open menu"
           >
-            <RiMenu3Fill size={24} />
+            <TextAlignEnd size={24} />
           </button>
         )}
       </div>
@@ -104,7 +103,7 @@ export default function Navbar() {
                 className="text-cream"
                 aria-label="Close menu"
               >
-                <IoCloseOutline size={32} />
+                <X size={32} />
               </button>
             </div>
 

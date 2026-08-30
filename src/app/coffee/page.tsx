@@ -1,5 +1,4 @@
 import CoffeeForm from "../components/CoffeeForm";
-import { CiCoffeeCup } from "react-icons/ci";
 
 export default function Coffee() {
   return (
@@ -8,7 +7,6 @@ export default function Coffee() {
 
         <h1 className="flex items-center text-white gap-2 text-2xl font-bold tracking-tight md:text-3xl mt-4">
           Buy me a coffee 
-          <CiCoffeeCup/>
         </h1>
 
         <p className="mt-4 max-w-md text-gray-400">

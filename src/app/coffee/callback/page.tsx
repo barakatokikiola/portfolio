@@ -1,9 +1,7 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { CiCircleCheck } from "react-icons/ci";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { SlClose } from "react-icons/sl";
+import { CircleCheck, LoaderCircle, CircleX } from "lucide-react";
 
 type PaymentStatus = "verifying" | "success" | "failed";
 
@@ -74,11 +72,11 @@ function CoffeeCallback() {
       <section className="bg-white/90 flex flex-col items-center justify-center text-navy p-12 rounded-md  h-80 max-w-xl m-auto">
         <span className="mb-6 text-5xl">
           {status === "verifying" ? (
-            <AiOutlineLoading3Quarters className="animate-spin" />
+            <LoaderCircle className="animate-spin" />
           ) : status === "success" ? (
-            <CiCircleCheck className="text-green-500" />
+            <CircleCheck className="text-green-500" />
           ) : (
-            <SlClose className="text-red-500" />
+            <CircleX className="text-red-500" />
           )}
         </span>
 

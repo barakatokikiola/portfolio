@@ -6,9 +6,8 @@ import revent from "@/assets/revent.webp";
 import film from "@/assets/filmpage.webp";
 import jobdoor from "@/assets/jobdoor.webp";
 import Image from "next/image";
-import { TfiLayoutLineSolid } from "react-icons/tfi";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
+import { MoveUpRight, Minus} from "lucide-react";
 
 type Project = {
   id: string;
@@ -24,33 +23,61 @@ type Project = {
 function ProjectTile({
   project,
   className,
-  isPriority = false,
+  isPriority
 }: {
   project: Project;
   className: string;
-  isPriority?: boolean;
+  isPriority?: boolean
 }) {
   return (
     <div
       className={`flex flex-col border p-4 rounded-md border-gold/20 ${className}`}
     >
-      <div className="relative h-64 overflow-hidden bg-navy-light">
+      <div className={`relative h-64 overflow-hidden bg-navy-light`}>
         <Image
           src={project.img}
           alt={project.title}
           fill
-          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+          sizes="(min-width: 768px) 40vw, 90vw"
           className="object-cover"
-          priority={isPriority}
-          fetchPriority={isPriority ? "high" : "auto"}
+          priority = {isPriority}
+          fetchPriority= {isPriority ? "high" : "auto"}
         />
-
         <span className="absolute top-3 left-3 bg-navy/80 text-gold text-xs font-body px-2 py-1 rounded-xs z-10">
           {project.category}
         </span>
       </div>
 
-      {/* rest of component */}
+      <div className="pt-3 flex-1">
+        <div className="flex items-center justify-between py-3">
+          <span className="font-ibm text-base text-gold">{project.id}</span>
+          <Link
+            href={project.live}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visit webpage"
+            className="font-body px-1.5 text-cream hover:text-gold"
+          >
+            <MoveUpRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <h1 className="font-heading text-cream text-base mt-1">
+          {project.title}
+        </h1>
+        <p className="font-body text-xs text-muted mt-2 leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-3">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs font-body text-muted border border-gold/25 rounded-full px-2.5 py-0.5"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -94,7 +121,7 @@ export default function Projects() {
     <section id="work" className="px-8 md:px-20 py-16 md:py-24">
       <div className="space-y-6">
         <p className="font-body text-xs tracking-widest text-gold uppercase flex items-center gap-2">
-          <TfiLayoutLineSolid className="text-xl" />
+          <Minus className="text-xl" />
           SELECTED WORK
         </p>
         <p className="text-cream text-3xl font-heading mb-6">

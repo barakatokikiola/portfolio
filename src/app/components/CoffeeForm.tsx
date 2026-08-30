@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { GrFormNextLink } from "react-icons/gr";
+import { MoveRight } from "lucide-react";
 
 const presetAmounts = [1000, 2500, 5000];
 
@@ -147,7 +147,7 @@ export default function CoffeeForm() {
         ) : (
           <p className="flex items-center justify-center gap-2 w-full ">
             Continue
-            <GrFormNextLink />
+            <MoveRight />{" "}
           </p>
         )}
       </button>
