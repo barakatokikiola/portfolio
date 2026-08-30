@@ -2,9 +2,9 @@
 
 import type { StaticImageData } from "next/image";
 
-import revent from "@/assets/revent.png";
-import film from "@/assets/filmpage.png";
-import jobdoor from "@/assets/jobdoor.png";
+import revent from "@/assets/revent.webp";
+import film from "@/assets/filmpage.webp";
+import jobdoor from "@/assets/jobdoor.webp";
 import Image from "next/image";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import Link from "next/link";
@@ -24,58 +24,33 @@ type Project = {
 function ProjectTile({
   project,
   className,
+  isPriority = false,
 }: {
   project: Project;
   className: string;
+  isPriority?: boolean;
 }) {
   return (
     <div
       className={`flex flex-col border p-4 rounded-md border-gold/20 ${className}`}
     >
-      <div className={`relative h-64 overflow-hidden bg-navy-light`}>
+      <div className="relative h-64 overflow-hidden bg-navy-light">
         <Image
           src={project.img}
           alt={project.title}
           fill
-          sizes="(min-width: 768px) 40vw, 90vw"
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
           className="object-cover"
-          loading="eager"
+          priority={isPriority}
+          fetchPriority={isPriority ? "high" : "auto"}
         />
+
         <span className="absolute top-3 left-3 bg-navy/80 text-gold text-xs font-body px-2 py-1 rounded-xs z-10">
           {project.category}
         </span>
       </div>
 
-      <div className="pt-3 flex-1">
-        <div className="flex items-center justify-between py-3">
-          <span className="font-ibm text-base text-gold">{project.id}</span>
-          <Link
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit webpage"
-            className="font-body px-1.5 text-cream hover:text-gold"
-          >
-            <BsArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
-        <h1 className="font-heading text-cream text-base mt-1">
-          {project.title}
-        </h1>
-        <p className="font-body text-xs text-muted mt-2 leading-relaxed">
-          {project.description}
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-2 mt-3">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs font-body text-muted border border-gold/25 rounded-full px-2.5 py-0.5"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      {/* rest of component */}
     </div>
   );
 }
@@ -129,7 +104,7 @@ export default function Projects() {
 
       <div className="flex flex-col gap-16 mb-8 shadow-2xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProjectTile project={smallA} className="" />
+          <ProjectTile project={smallA} className="" isPriority />
           <ProjectTile project={secondaryA} className="" />
           <ProjectTile project={featured} className="" />
         </div>

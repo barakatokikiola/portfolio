@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
-import image from "@/assets/barakat.jpg";
+import image from "@/assets/barakat.webp";
 import Image from "next/image";
 import Link from "next/link";
 

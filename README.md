@@ -31,7 +31,7 @@ The website is designed with a focus on clean interfaces, responsive layouts, ac
 ```text
 barakat-portfolio/
 ├── public/
-│   ├── og-image.png
+│   ├── og-image.webp
 │   └── ...
 ├── src/
 │   ├── app/

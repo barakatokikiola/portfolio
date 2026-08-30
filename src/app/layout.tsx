@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Design-led engineering for brands that want to stand apart.",
     url: "https://barakatokikiola.netlify.app/",
     siteName: "Barakat Okikiola",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
     type: "website",
   },
   twitter: {
