@@ -9,7 +9,7 @@ The website is designed with a focus on clean interfaces, responsive layouts, ac
 * Responsive design across desktop, tablet, and mobile
 * Modern and minimal UI
 * Project showcase with links to live projects
-* Services section
+* Engineering Approach section
 * About section
 * Contact section
 * Mobile navigation menu

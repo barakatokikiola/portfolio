@@ -3,14 +3,16 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-import Services from "./components/Services";
+import EngineeringApproach from "./components/Approach";
+import Skills from "./components/Skills";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Projects />
-      <Services/>
+      <Skills />
+      <EngineeringApproach/>
       <About/>
       <Contact/>
       <Footer/>

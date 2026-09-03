@@ -8,8 +8,10 @@ import { useState } from "react";
 
 const links = [
   { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
+
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Resume", href: "/Barakat_Resume.pdf" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -37,6 +39,10 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   aria-label={link.label}
+                  target={link.label === "Resume" ? "_blank" : undefined}
+                  rel={
+                    link.label === "Resume" ? "noopener noreferrer" : undefined
+                  }
                   className="relative py-1 font-body text-xs text-muted transition-colors
                 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0
                 after:bg-gold after:transition-[width] after:duration-300

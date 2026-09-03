@@ -7,7 +7,7 @@ import film from "@/assets/filmpage.webp";
 import jobdoor from "@/assets/jobdoor.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { MoveUpRight, Minus} from "lucide-react";
+import { MoveUpRight, Minus } from "lucide-react";
 
 type Project = {
   id: string;
@@ -23,11 +23,11 @@ type Project = {
 function ProjectTile({
   project,
   className,
-  isPriority
+  isPriority,
 }: {
   project: Project;
   className: string;
-  isPriority?: boolean
+  isPriority?: boolean;
 }) {
   return (
     <div
@@ -40,8 +40,8 @@ function ProjectTile({
           fill
           sizes="(min-width: 768px) 40vw, 90vw"
           className="object-cover"
-          priority = {isPriority}
-          fetchPriority= {isPriority ? "high" : "auto"}
+          priority={isPriority}
+          fetchPriority={isPriority ? "high" : "auto"}
         />
         <span className="absolute top-3 left-3 bg-navy/80 text-gold text-xs font-body px-2 py-1 rounded-xs z-10">
           {project.category}
@@ -88,9 +88,16 @@ const featured: Project = {
   title: "Job Application Tracker",
   live: "https://jobdoor.netlify.app",
   github: "https://github.com/barakatokikiola/jobtrack",
-  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Supabase",
+    "TanStack Query",
+    "Zod",
+  ],
   description:
-    "A full-stack job application tracker built with Next.js, Supabase, React Query, Zod, and TypeScript, tracking applications, statuses, and details in one place.",
+    "A job application management platform that helps job seekers organize applications, track progress, and manage important job details from one place.I built the application with a focus on type safety, form validation, server-state management, authentication, and a responsive user experience.",
   category: "Website Design",
 };
 const secondaryA: Project = {
@@ -101,7 +108,7 @@ const secondaryA: Project = {
   github: "https://github.com/barakatokikiola/filmmaker-website",
   tags: ["React", "Tailwind CSS", "JavaScript"],
   description:
-    "A responsive marketing site for a wedding videography studio, designed and built solo with a cinematic feel matching the brand's storytelling, custom animated hero, refined typography, mobile-first throughout.",
+    "A cinematic portfolio website designed and built for a wedding videography studio. I translated the brand's visual identity into a responsive React experience with custom animations, intentional typography, and mobile-first layouts.",
   category: "Website Design",
 };
 const smallA: Project = {
@@ -112,20 +119,20 @@ const smallA: Project = {
   github: "https://github.com/barakatokikiola/Revent-Website",
   tags: ["Angular", "TypeScript", "Tailwind CSS"],
   description:
-    "A responsive website built with Angular, TypeScript, and Tailwind CSS, focused on clean, accessible design.",
+    "A responsive business website built with Angular and TypeScript, with a focus on reusable components, responsive layouts, accessibility, and a clean user experience.",
   category: "Website Design",
 };
 
 export default function Projects() {
   return (
-    <section id="work" className="px-8 md:px-20 py-16 md:py-24">
+    <section id="work" className="border-t border-navy-light/50 px-8 md:px-16 py-8 ">
       <div className="space-y-6">
         <p className="font-body text-xs tracking-widest text-gold uppercase flex items-center gap-2">
           <Minus className="text-xl" />
           SELECTED WORK
         </p>
         <p className="text-cream text-3xl font-heading mb-6">
-          Projects I&#39;ve built
+          A few things I&#39;ve developed and shipped.
         </p>
       </div>
 
