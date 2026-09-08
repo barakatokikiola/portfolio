@@ -19,12 +19,12 @@ const ibm = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://barakatokikiola.netlify.app/"), // swap for your real domain
-  title: "Barakat Okikiola Tajudeen | Website Designer & Frontend Developer",
+  title: "Barakat Okikiola Tajudeen | Website & Frontend Developer",
   description:
     "Barakat Okikiola is a frontend engineer and website designer based in Lagos, building design-led websites for brands that want to stand apart.",
   openGraph: {
-    title: "Barakat Okikiola Tajudeen | Website Designer & Frontend Developer",
-    description: "Design-led engineering for brands that want to stand apart.",
+    title: "Barakat Okikiola Tajudeen | Website & Frontend Developer",
+    description: "Website & Frontend Developer",
     url: "https://barakatokikiola.netlify.app/",
     siteName: "Barakat Okikiola",
     images: ["/og-image.png"],
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Barakat Okikiola Tajudeen | Website Designer & Frontend Developer",
-    description: "Design-led engineering for brands that want to stand apart.",
+    title: "Barakat Okikiola Tajudeen | Website & Frontend Developer",
+    description: "Website & Frontend Developer",
   },
 };
 
