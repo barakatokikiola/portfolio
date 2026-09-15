@@ -137,14 +137,14 @@ export default function About() {
             {/* CTA */}
             <div className="flex flex-wrap gap-3 mt-8">
               <Link
-                href="#work"
+                href="/#work"
                 className="bg-gold text-navy font-body text-sm font-medium px-5 py-2.5 rounded-xs hover:bg-gold/90 transition-colors"
               >
                 View my work
               </Link>
 
               <Link
-                href="#contact"
+                href="/contact"
                 className="border border-cream/20 text-cream font-body text-sm font-medium px-5 py-2.5 rounded-xs hover:bg-cream/5 transition-colors"
               >
                 Get in touch

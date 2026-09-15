@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { label: "Work", href: "#work" },
+  { label: "Work", href: "/#work" },
 
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
+  { label: "About", href: "/about" },
+  { label: "Skills", href: "/#skills" },
   { label: "Resume", href: "/Barakat_Resume.pdf" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

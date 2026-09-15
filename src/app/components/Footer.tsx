@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Approach", href: "#approach" },
-  { label: "About", href: "#about" },
-  { label: "Currently", href: "#currently" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Approach", href: "/#approach" },
+  { label: "About", href: "/about" },
+  { label: "Currently", href: "/about/#currently" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-8">
         {/* LOGO */}
         <Link
-          href="#"
+          href="/"
           className="font-heading text-lg text-cream hover:text-gold transition-colors"
         >
           Barakat<span className="text-gold">.</span>
@@ -45,12 +45,12 @@ export default function Footer() {
         <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="font-body text-sm text-muted hover:text-cream transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
