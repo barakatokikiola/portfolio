@@ -5,6 +5,7 @@ import type { StaticImageData } from "next/image";
 import revent from "@/assets/revent.webp";
 import film from "@/assets/filmpage.webp";
 import jobdoor from "@/assets/jobdoor.webp";
+import amor from "@/assets/amor.webp"
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight, Minus } from "lucide-react";
@@ -123,6 +124,17 @@ const smallA: Project = {
   category: "Website Design",
 };
 
+const amorNg: Project = {
+  id: "04",
+  img: amor,
+  title: "Amor",
+  live: "https://amorng.netlify.app",
+  github: "https://github.com/barakatokikiola/amor",
+  tags: ["Angular", "TypeScript", "Tailwind CSS"],
+  description:
+"Amor_ng is a high-end leather goods store built using Nextjs and",
+  category: "Website Design",
+};
 export default function Projects() {
   return (
     <section id="work" className="border-t border-navy-light/50 px-8 md:px-16 py-8 ">
@@ -141,6 +153,7 @@ export default function Projects() {
           <ProjectTile project={smallA} className="" isPriority />
           <ProjectTile project={secondaryA} className="" />
           <ProjectTile project={featured} className="" />
+          <ProjectTile project={amorNg} className="" />
         </div>
       </div>
     </section>
