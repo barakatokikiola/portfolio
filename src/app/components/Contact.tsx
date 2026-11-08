@@ -96,7 +96,7 @@ export default function Contact() {
             variants={item}
             className="font-body text-xs text-muted mt-4"
           >
-            Open to frontend opportunities and selected projects
+            Open to frontend and machine learning opportunities
           </motion.p>
         </div>
 

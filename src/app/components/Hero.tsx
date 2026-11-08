@@ -40,7 +40,7 @@ export default function Hero() {
         <span className="w-2 h-2 rounded-full bg-green-400" />
 
         <span className="font-body text-xs md:text-sm text-muted">
-          Open to frontend roles
+          Open to frontend and AI/ML opportunities
         </span>
       </motion.div>
 
@@ -49,7 +49,7 @@ export default function Hero() {
         variants={item}
         className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-gold mb-4"
       >
-        Frontend Developer
+        Frontend Developer, AI/ML Enthusiast
       </motion.p>
 
       {/* Main heading */}

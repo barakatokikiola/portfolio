@@ -3,12 +3,15 @@
 import type { StaticImageData } from "next/image";
 
 import revent from "@/assets/revent.webp";
+import telchurn from "@/assets/telchurn.webp";
 import film from "@/assets/filmpage.webp";
 import jobdoor from "@/assets/jobdoor.webp";
-import amor from "@/assets/amor.webp"
+import amor from "@/assets/amor.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveUpRight, Minus } from "lucide-react";
+import Tabs from "./Tabs";
+import { useSearchParams } from "next/navigation";
 
 type Project = {
   id: string;
@@ -130,32 +133,58 @@ const amorNg: Project = {
   title: "Amor",
   live: "https://amorng.netlify.app",
   github: "https://github.com/barakatokikiola/amor",
-  tags: ["Angular", "TypeScript", "Tailwind CSS"],
+  tags: ["Nextjs", "TypeScript", "Tailwind CSS"],
   description:
-"Amor_ng is a high-end leather goods store built using Nextjs and",
+    "Amor_ng is a high-end leather goods store built using Nextjs and",
   category: "Website Design",
 };
+
+const telChurn: Project = {
+  id: "01",
+  img: telchurn,
+  title: "Telecom Churn Prediction",
+  live: "https://telchurn.streamlit.app/",
+  github: "https://github.com/barakatokikiola/telecom-customer-churn",
+  tags: ["Python", "Pandas", "Numpy", "Streamlit", "Scikit-learn"],
+  description:
+    "A machine learning project for predicting customer churn in the telecommunications industry.",
+  category: "AI/ML",
+};
+
 export default function Projects() {
+  const tab = useSearchParams().get("tab") ?? "frontend";
   return (
-    <section id="work" className="border-t border-navy-light/50 px-8 md:px-16 py-8 ">
+    <section
+      id="work"
+      className="border-t border-navy-light/50 px-8 md:px-16 py-8 "
+    >
       <div className="space-y-6">
         <p className="font-body text-xs tracking-widest text-gold uppercase flex items-center gap-2">
           <Minus className="text-xl" />
-          SELECTED WORK
-        </p>
-        <p className="text-cream text-3xl font-heading mb-6">
-          A few things I&#39;ve developed and shipped.
+          PROJECTS
         </p>
       </div>
 
-      <div className="flex flex-col gap-16 mb-8 shadow-2xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProjectTile project={smallA} className="" isPriority />
-          <ProjectTile project={secondaryA} className="" />
-          <ProjectTile project={featured} className="" />
-          <ProjectTile project={amorNg} className="" />
+      <Tabs />
+
+      {tab === "frontend" && (
+        <div className="flex flex-col gap-16 mb-8 shadow-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectTile project={smallA} className="" isPriority />
+            <ProjectTile project={secondaryA} className="" />
+            <ProjectTile project={featured} className="" />
+            <ProjectTile project={amorNg} className="" />
+          </div>
         </div>
-      </div>
+      )}
+
+      {tab === "ai-ml" && (
+        <div className="flex flex-col gap-16 mb-8 shadow-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectTile project={telChurn} className="" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
