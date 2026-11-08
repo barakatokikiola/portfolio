@@ -12,6 +12,7 @@ import Link from "next/link";
 import { MoveUpRight, Minus } from "lucide-react";
 import Tabs from "./Tabs";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 type Project = {
   id: string;
@@ -165,7 +166,9 @@ export default function Projects() {
         </p>
       </div>
 
-      <Tabs />
+      <Suspense>
+        <Tabs />
+      </Suspense>
 
       {tab === "frontend" && (
         <div className="flex flex-col gap-16 mb-8 shadow-2xl">
